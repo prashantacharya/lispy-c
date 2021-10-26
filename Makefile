@@ -5,6 +5,8 @@ OUTPUT=bin/lispy
 build: 
 	$(CC) -std=c99 -Wall $(C_FILES) -ledit -lm -o $(OUTPUT)
 
+run:
+	$(OUTPUT)
 
 clean:
 	rm -rf bin/*
