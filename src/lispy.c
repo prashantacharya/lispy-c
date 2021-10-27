@@ -1,13 +1,9 @@
 #include <editline/readline.h>
-#include <stdio.h>
-#include <stdlib.h>
 
+#include "lispy.h"
 #include "mpc.h"
-#include "utils.h"
 
-int main(int argc, char **argv) {
-  printInfo();
-
+void lispy() {
   mpc_parser_t *Number = mpc_new("number");
   mpc_parser_t *String = mpc_new("string");
   mpc_parser_t *Operator = mpc_new("operator");
@@ -42,5 +38,4 @@ int main(int argc, char **argv) {
   }
 
   mpc_cleanup(4, Number, Operator, Expr, Lispy);
-  return 0;
 }
