@@ -1,5 +1,6 @@
 #include <editline/readline.h>
 
+#include "eval.h"
 #include "lispy.h"
 #include "mpc.h"
 
@@ -27,7 +28,8 @@ void lispy() {
     mpc_result_t r;
 
     if (mpc_parse("<stdin>", input, Lispy, &r)) {
-      mpc_ast_print(r.output);
+      long result = eval(r.output);
+      printf("%li\n", result);
       mpc_ast_delete(r.output);
     } else {
       mpc_err_print(r.error);

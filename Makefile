@@ -1,5 +1,6 @@
 CC=cc
 C_FILES=src/*.c
+HEADER_FILES=src/*.h
 OUTPUT=bin/lispy
 
 build: 
@@ -13,3 +14,4 @@ clean:
 
 format:
 	clang-format -i $(C_FILES)
+	clang-format -i $(HEADER_FILES)
